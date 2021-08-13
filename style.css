@@ -248,7 +248,7 @@ CART MODAL
   bottom: 0px;
   z-index: 373;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: all .5s linear;
+  transition: all .3s linear;
   transform: translateX(100%);
 }
 .cart.show{
@@ -264,6 +264,8 @@ CART MODAL
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid rgba(34, 34, 34,.4);
+  margin-bottom: 10px;
 }
 .cart-header h2 {
   font-size: 16px;
@@ -341,8 +343,8 @@ CART MODAL
     cursor: pointer;
 }
 .summary{
-    border: 1px solid crimson;
-    /* margin: 10px 0px 0px; */
+    /* border: 1px solid crimson; */
+    margin: 10px 0px 0px;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
