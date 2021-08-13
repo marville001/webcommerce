@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 a, a:hover{
@@ -9,8 +12,14 @@ a, a:hover{
 
 }
 
+/* 
+=============
+Header
+============= 
+*/
+
 .header{
-    height: 5rem;
+    height: 6rem;
     display: flex;
     align-items: center;
 }
@@ -56,17 +65,77 @@ nav.nav-links.show{
     padding: 20px 0px;
     width: 100%;
     text-align: center;
-    color: rgb(104, 101, 101);
+    color: rgb(32, 32, 32);
 }
 .btn-cart{
     position: absolute;
-    top: 1.8rem;
+    top: 2.4rem;
     font-size: 20px;
     color: rgba(43, 43, 43,.8);
 cursor: pointer;
     right: 5rem;
+    transition: all .3s ease;
 }
 
+.btn-cart:hover{
+    color: rgba(43, 12, 12, 0.8);
+}
+
+/* 
+=============
+Hero
+============= 
+*/
+.hero-container{
+    width: 90vw;
+    max-width: 1080px;
+     margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 0px;
+}
+.hero-container .left-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-container .left-content h2{
+    font-size: 25px;
+    font-weight: 400;
+}
+.hero-container .left-content h1{
+    font-size: 40px;
+    margin: 2px 0px;
+    text-transform: uppercase;
+}
+
+.hero-container .left-content p{
+    font-size: 18px;
+    margin: 2px 0px;
+    text-align: justify;
+}
+.hero-container .right-content{
+    flex: 1;
+    overflow: hidden;
+    padding: 0px 30px;
+}
+.hero-container .right-content img{
+    width: 100%;
+    height: 400px;
+}
+.shop-btn{
+    background-color: #000;
+    width: 200px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    margin: 30px 0px;
+    cursor: pointer;
+}
+
+/* MEDIA QUERY */
 @media screen and (min-width: 900px){
     .header-container{
         display: flex;
@@ -87,6 +156,31 @@ cursor: pointer;
     .fa-bars{
         display: none;
     }
+}
 
+@media screen and (max-width: 900px){
+    .hero-container{
+        grid-template-columns: 1fr;
+    }
+    .hero-container .left-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-container .left-content h2{
+        font-size: 28px;
+    }
+    .hero-container .left-content h1{
+        font-size: 35px;
+        margin: 5px 0px;
+    }
     
+    .hero-container .left-content p{
+        font-size: 14px;
+        text-align: center;
+        line-height: 20px;
+    }
+    .hero-container .right-content{
+        display: none;
+    }
 }
