@@ -400,6 +400,41 @@ MEDIA QUERY DESKTOP
 
 /* 
 =============
+NOTIFICATION
+============= 
+*/
+.notification{
+  background-color: rgb(109, 240, 109);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .3s ease;
+  display: none;
+  opacity: 0;
+  width: 0px;
+  overflow: hidden;
+}
+.notification.show{
+  display: flex;
+  opacity: 1;
+  width: auto;
+}
+
+.notification .close{
+  /* background-color: red; */
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+
+/* 
+=============
 MEDIA QUERY MOBILE & TABLET
 ============= 
 */
