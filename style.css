@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 a,
 a:hover {
@@ -45,7 +48,7 @@ Header
 
 nav.nav-links {
   position: absolute;
-  top: 3.5rem;
+  top: 4rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -175,28 +178,28 @@ SHOP
   position: relative;
   overflow: hidden;
 }
-.item .tag{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: #000;
-    color: #fff;
-    padding: 2px 5px;
-    font-size: 12px;
-    z-index: 2;
+.item .tag {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #000;
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 12px;
+  z-index: 2;
 }
-.item:hover img{
-    transform: scale(1);
+.item:hover img {
+  transform: scale(1);
 }
 
-.item:hover .btn-add-to-cart{
-    transform: translateX(0);
+.item:hover .btn-add-to-cart {
+  transform: translateX(0);
 }
 .item img {
   width: 100%;
   height: auto;
   transform: scale(0.8);
-  transition: all .6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .item .name {
@@ -215,23 +218,157 @@ SHOP
   text-decoration: line-through;
   color: #555050;
 }
-.btn-add-to-cart{
-    background-color: #000;
-    border: none;
-    outline:none;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 2px;
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    cursor: pointer;
-    transform: translateX(78px);
-    transition: all .6s ease-in-out;
+.btn-add-to-cart {
+  background-color: #000;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 2px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  cursor: pointer;
+  transform: translateX(78px);
+  transition: all 0.6s ease-in-out;
 }
-.btn-add-to-cart i{
+.btn-add-to-cart i {
+  margin-right: 10px;
+}
+/* 
+=============
+CART MODAL
+============= 
+*/
+.cart {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 373;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all .5s linear;
+  transform: translateX(100%);
+}
+.cart.show{
+    transform: translateX(0);
+}
+.cart-container {
+  background-color: #fff;
+  width: 400px;
+  margin-left: auto;
+  padding: 20px;
+}
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-header h2 {
+  font-size: 16px;
+}
+.cart-header i {
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.cart-items {
+    width: 100%;
+    overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  max-height: 60vh;
+}
+.cart-item {
+  display: flex;
+  padding: 10px 0px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+}
+.cart-items-details h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.cart-items-details p {
+  font-size: 12px;
+}
+.cart-quantity {
+  display: flex;
+  margin-top: 10px;
+}
+.cart-quantity-minus,
+.cart-quantity-value,
+.cart-quantity-plus {
+  border: 1px solid #eee;
+  font-size: 16px;
+  padding: 5px 12px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 10px;
+}
+
+.fa-trash{
+    margin-left: auto;
     margin-right: 10px;
+    color: crimson;
+    font-size: 20px;
 }
+.cart-footer{
+    padding: 20px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-continue{
+    background-color: #fff;
+    border: 1px solid crimson;
+    outline:none;
+    padding: 10px 20px;
+    color: crimson;
+    cursor: pointer;
+}
+.btn-checkout{
+    background-color: crimson;
+    color: #fff;
+    border: 1px solid crimson;
+    outline:none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.summary{
+    border: 1px solid crimson;
+    /* margin: 10px 0px 0px; */
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.summary h3{
+    font-size: 16px;
+    color: #555050;
+}
+.summary h3 span{
+    color: #000;
+}
+/* 
+=============
+FOOTER
+============= 
+*/
+.page-footer {
+  background-color: #000;
+  height: 4rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* 
 =============
 MEDIA QUERY DESKTOP
@@ -295,15 +432,15 @@ MEDIA QUERY MOBILE & TABLET
   .discover-container .right {
     font-size: 16px;
   }
-  .items-list{
+  .items-list {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
   .item .price {
-      margin-bottom: 0px;
+    margin-bottom: 0px;
   }
-  .btn-add-to-cart{
-      position: relative;
-      transform: translateX(0);
-      margin: 20px;
+  .btn-add-to-cart {
+    position: relative;
+    transform: translateX(0);
+    margin: 20px;
   }
 }
