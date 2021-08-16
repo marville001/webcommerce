@@ -30,6 +30,7 @@ Header
   width: 90vw;
   max-width: 1080px;
   margin: 0px auto;
+  position: relative;
 }
 .nav-logo {
   display: flex;
@@ -72,11 +73,11 @@ nav.nav-links.show {
 }
 .btn-cart {
   position: absolute;
-  top: 2.4rem;
+  top: 0.5rem;
   font-size: 20px;
   color: rgba(43, 43, 43, 0.8);
   cursor: pointer;
-  right: 5rem;
+  right: 2.5rem;
   transition: all 0.3s ease;
 }
 
