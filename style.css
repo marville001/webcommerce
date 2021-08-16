@@ -197,7 +197,7 @@ SHOP
 }
 .item img {
   width: 100%;
-  height: auto;
+  height: 250px;
   transform: scale(0.8);
   transition: all 0.6s ease-in-out;
 }
@@ -320,6 +320,7 @@ CART MODAL
     margin-right: 10px;
     color: crimson;
     font-size: 20px;
+    cursor: pointer;
 }
 .cart-footer{
     padding: 20px 0px 0px;
